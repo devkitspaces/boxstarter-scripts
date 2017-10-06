@@ -1,12 +1,16 @@
 {
-    "name": "<name>",
+    "name": "Box",
     "license": "Public Domain",
-    "url": "<url>",
+    "url": "https://thenounproject.com/term/box/23313/",
     "author": {
-        "name": "<author>",
-        "url": "<author url>"
+        "name": "Ryzhkov Anton",
+        "url": "https://thenounproject.com/ryzhkov.anton"
     },
     "tags": [
-        "<tags>"
+        "Box",
+        "Cardboard Box",
+        "Mail",
+        "Open",
+        "Package"
     ]
 }
