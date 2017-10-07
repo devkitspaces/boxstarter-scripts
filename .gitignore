@@ -3,4 +3,9 @@
 *.swp
 *.db
 .vscode/
-doc/images/
+
+# Documentation:
+docs/**/images/
+
+# Documentation:
+docs/**/images/
