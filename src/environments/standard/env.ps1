@@ -1,28 +1,20 @@
-##
-#
-# Boxstarter
-#
-##
+$Boxstarter.RebootOk=$true
+$Boxstarter.NoPassword=$false
+$Boxstarter.AutoLogin=$true
 
-# Windows Configuration
-#
-# Sets up the windows configuration properties.
-Set-WindowsExplorerOptions -EnableShowFileExtensions
-Install-WindowsUpdate
+Enable-RemoteDesktop
+
 Disable-InternetExplorerESC
 Disable-UAC
-Set-StartScreenOptions -EnableBootToDesktop -EnableDesktopBackgroundOnStart -EnableShowStartOnActiveScreen -EnableShowAppsViewOnStartScreen -EnableSearchEverywhereInAppsView -EnableListDesktopAppsFirst
-Set-TaskbarOptions -Size Large -Lock -Dock Bottom
-Update-ExecutionPolicy
 
-###
-### Installing applications
-###
+Update-ExecutionPolicy Unrestricted
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowFileExtensions -EnableShowFullPathInTitleBar
+Set-TaskbarOptions -Size Small -Lock -Dock Bottom
+
+Install-WindowsUpdate -AcceptEula
+if (Test-PendingReboot) { Invoke-Reboot }
+
 choco install -y chocolatey
-
-# 
-# Essentials
-#
 choco install -y googlechrome foxitreader javaruntime
 choco install -y 7zip.install vlc
 choco install -y malwarebytes
