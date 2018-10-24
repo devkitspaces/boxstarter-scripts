@@ -2,30 +2,24 @@
 
 A script for setting up a Windows PC using BoxStarter and Chocolatey.
 
-## How To Use
+## Getting Started
 
 There are a few options for launching a BoxStarter script check out the [offical documentation](http://boxstarter.org/InstallingPackages) for
-all the various methods. We'll focus on two methods - manual and bootstrapper.
+all the various methods.
 
-1. Run the following command
-
-    * In Command prompt or Powershell
-
-    ```powershell
-    > START http://boxstarter.org/package/nr/url?...
-    ```
-
-  * In a Browser, go to
-
-    ```http
-    http://boxstarter.org/package/nr/url?http://boxstarter.org/package/nr/url?..
-    ```
+```powershell
+> START http://boxstarter.org/package/nr/url?...
+```
 
 ## Environments
 
-| Environment | Link | Description |
-| ---         | ---  | ---         |
-| dotnet | [install](http://boxstarter.org) | A .NET Development environment |
+| Environment | Description |
+| ---         | ---         |
+| basic | A very simple box |
+| standard | A common environment that can be used on multiple dev machines |
+| fullwin | A .NET Developmenet environment with SQL Database tooling |
+| dotnet | A .NET Development environment |
+| nodejs | A rough outline of a nodejs environment |
 
 ## Acknowledgements
 
