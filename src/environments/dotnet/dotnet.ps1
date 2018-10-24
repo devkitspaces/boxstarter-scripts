@@ -1,22 +1,22 @@
-##
-# Repeatable, reboot resilient windows environment installations made easy using Chocolatey packages.
-# Installed by http://boxstarter.org/package/nr/url?
-##
+$Boxstarter.RebootOk=$true
+$Boxstarter.NoPassword=$false
+$Boxstarter.AutoLogin=$true
+
+Enable-RemoteDesktop
+
+Disable-InternetExplorerESC
+Disable-UAC
+
+Update-ExecutionPolicy Unrestricted
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowFileExtensions -EnableShowFullPathInTitleBar
+Set-TaskbarOptions -Size Small -Lock -Dock Bottom
+
+Install-WindowsUpdate -AcceptEula
+if (Test-PendingReboot) { Invoke-Reboot }
 
 ###
 ### Boxstarter
 ###
-
-# Windows Configuration
-#
-# Sets up the windows configuration properties.
-Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions
-Install-WindowsUpdate
-Disable-InternetExplorerESC
-Disable-UAC
-Set-StartScreenOptions -EnableBootToDesktop -EnableDesktopBackgroundOnStart -EnableShowStartOnActiveScreen -EnableShowAppsViewOnStartScreen -EnableSearchEverywhereInAppsView -EnableListDesktopAppsFirst
-Set-TaskbarOptions -Size Large -Lock -Dock Bottom
-Update-ExecutionPolicy
 
 ###
 ### Installing applications
@@ -30,14 +30,17 @@ choco install vlc
 choco install 7zip.install
 choco install putty.install
 choco install googlechrome
+if (Test-PendingReboot) { Invoke-Reboot }
 
 # Development Applications
 #
 # Installs applications useful for software development.
 choco install git.install
 choco install visualstudiocode
+if (Test-PendingReboot) { Invoke-Reboot }
 
 # .NET Applications
 #
 # Installs applications specific to .NET Development.
 choco install visualstudio2017community
+if (Test-PendingReboot) { Invoke-Reboot }
