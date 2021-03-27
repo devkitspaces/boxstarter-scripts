@@ -1,0 +1,17 @@
+slug: boxstarter-scripts
+description: A script for setting up a Windows PC using BoxStarter and Chocolatey.
+project: devkitspaces
+namespace:
+status: archived
+icon: icon.svg
+license:
+  type: MIT
+  content: Jonathan Beverly <jrbeverly>
+  year: 2017
+topics: |-
+  [
+    "boxstarter",
+    "batch",
+    "windows",
+    "chocolatey"
+  ]
